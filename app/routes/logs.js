@@ -6,16 +6,20 @@ const cors = require('cors');
 
 dotenv.config();
 
+
 // Load models
 require('../models/Log');
 const Log = mongoose.model('logs');
+
 
 const corsOptions = {
   origin: process.env.CORS_ORIGIN,
   optionsSuccessStatus: 200
 }
 
-router.post('/', cors(corsOptions), (req, res) => {
+router.use(cors(corsOptions));
+
+router.post('/', (req, res) => {
   let log = {}
   log.type = req.body.type;
   log.log = req.body.log;

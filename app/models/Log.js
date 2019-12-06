@@ -6,7 +6,7 @@ const LogSchema = new Schema({
     type: String
   },
   log: {
-    type: String,
+    type: Schema.Types.Mixed,
     required: true
   },
   date: {
