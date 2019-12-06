@@ -11,7 +11,7 @@ require('../models/Log');
 const Log = mongoose.model('logs');
 
 const corsOptions = {
-  origin: 'http://35.207.106.33',
+  origin: process.env.CORS_ORIGIN,
   optionsSuccessStatus: 200
 }
 
