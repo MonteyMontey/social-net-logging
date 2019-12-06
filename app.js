@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 // Initialize express
 const app = express();
 
+
 // Load env variables
 dotenv.config();
 
@@ -22,8 +23,8 @@ mongoose.connect(process.env.MONGODB_CONNECTION, {
 
 
 // Body parser middleware
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Use routes
 app.use('/logs', logs);
