@@ -12,12 +12,14 @@ require('../models/Log');
 const Log = mongoose.model('logs');
 
 
-const corsOptions = {
+/* const corsOptions = {
   origin: process.env.CORS_ORIGIN,
   optionsSuccessStatus: 200
-}
+} */
 
-router.use(cors(corsOptions));
+// router.use(cors(corsOptions));
+
+router.use(cors());
 
 router.post('/', (req, res) => {
   let log = {}
